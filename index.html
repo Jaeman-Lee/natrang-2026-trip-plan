@@ -245,6 +245,21 @@
     .choice-card h3 { margin: 12px 0 8px; }
     .choice-card p { margin: 0; color: var(--muted); font-size: 13px; }
 
+    .candidate-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+    .candidate-panel { padding: 20px; border-radius: var(--radius-lg); background: rgba(255,253,248,.86); border: 1px solid var(--line); }
+    .candidate-panel-head { display: flex; align-items: center; gap: 10px; margin-bottom: 13px; }
+    .candidate-panel-head span { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 10px; background: rgba(105,200,199,.16); }
+    .candidate-panel-head h3 { margin: 0; font-size: 17px; }
+    .candidate-list { display: grid; gap: 8px; }
+    .candidate-card { padding: 12px; border-radius: 12px; background: white; border: 1px solid var(--line); }
+    .candidate-card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
+    .candidate-card h4 { margin: 0; font-size: 13px; }
+    .candidate-price { flex: 0 0 auto; color: var(--coral); font-size: 10px; font-weight: 900; }
+    .candidate-card p { margin: 5px 0 9px; color: var(--muted); font-size: 11px; }
+    .google-link { display: inline-flex; align-items: center; gap: 5px; padding: 6px 9px; border-radius: 999px; background: rgba(13,111,124,.08); color: var(--ocean); font-size: 10px; font-weight: 850; text-decoration: none; }
+    .google-link:hover { background: rgba(13,111,124,.15); }
+    .candidate-footnote { margin: 12px 0 0; color: var(--muted); font-size: 10px; }
+
     .two-col { display: grid; grid-template-columns: 1.15fr .85fr; gap: 18px; }
     .prepare-budget { order: 1; }
     .prepare-check { order: 2; }
@@ -313,6 +328,7 @@
       .hero-grid, .two-col { grid-template-columns: 1fr; }
       .hero-side { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
       .overview-grid, .choice-grid { grid-template-columns: 1fr 1fr; }
+      .candidate-grid { grid-template-columns: 1fr; }
       .day-cover { grid-template-columns: 110px 1fr; }
       .pace { grid-column: 1 / -1; width: max-content; }
       .section-head { align-items: flex-start; flex-direction: column; }
@@ -422,6 +438,7 @@
       <div class="shell nav-strip">
         <a class="nav-pill" href="#overview">한눈에 보기</a>
         <a class="nav-pill accent" href="#prices">물가 · 예산</a>
+        <a class="nav-pill" href="#candidates">마사지 · 맛집 · 카페</a>
         <a class="nav-pill" href="#day0">7/29 · 도착</a>
         <a class="nav-pill" href="#day1">7/30 · 시내</a>
         <a class="nav-pill" href="#day2">7/31 · 빈원더스</a>
@@ -685,6 +702,93 @@
         </article>
       </section>
 
+      <section id="candidates" class="section">
+        <div class="section-head">
+          <div><p class="kicker">하바나 호텔 출발 기준</p><h2>마사지 · 식당 · 카페 후보</h2></div>
+          <p class="section-note">지도 버튼을 누르면 스마트폰의 Google Maps로 연결됩니다. 이동시간은 교통 상황에 따라 달라질 수 있습니다.</p>
+        </div>
+        <div class="candidate-grid">
+          <article class="candidate-panel">
+            <div class="candidate-panel-head"><span>♨</span><h3>마사지</h3></div>
+            <div class="candidate-list">
+              <div class="candidate-card">
+                <div class="candidate-card-top"><h4>Havana Spa</h4><span class="candidate-price">₫₫₫</span></div>
+                <p>호텔 내부 · 이동 없이 이용 · 늦은 일정에 편리<br>가격과 샤워 가능 여부는 프런트 문의</p>
+                <a class="google-link" href="https://www.google.com/maps/search/?api=1&amp;query=Havana+Spa+Premier+Havana+Nha+Trang" target="_blank" rel="noreferrer">Google 지도 ↗</a>
+              </div>
+              <div class="candidate-card">
+                <div class="candidate-card-top"><h4>Casa Spa</h4><span class="candidate-price">₫₫</span></div>
+                <p>09 Hùng Vương · 도보 약 8–12분<br>10:00–22:00 안내 · 야시장 일정과 조합</p>
+                <a class="google-link" href="https://www.google.com/maps/search/?api=1&amp;query=Casa+Spa+09+Hung+Vuong+Nha+Trang" target="_blank" rel="noreferrer">Google 지도 ↗</a>
+              </div>
+              <div class="candidate-card">
+                <div class="candidate-card-top"><h4>Sứ Spa</h4><span class="candidate-price">200–400K₫+</span></div>
+                <p>Nguyễn Thiện Thuật · 차량 약 8–12분<br>베트남 전통 마사지 · 사전 예약 권장</p>
+                <a class="google-link" href="https://www.google.com/maps/search/?api=1&amp;query=Su+Spa+Nha+Trang" target="_blank" rel="noreferrer">Google 지도 ↗</a>
+              </div>
+              <div class="candidate-card">
+                <div class="candidate-card-top"><h4>Charm Spa Grand</h4><span class="candidate-price">₫₫–₫₫₫</span></div>
+                <p>26 Nguyễn Trung Trực · 차량 약 5–10분<br>마사지·스크럽 등 패키지형 선택지</p>
+                <a class="google-link" href="https://www.google.com/maps/search/?api=1&amp;query=Charm+Spa+Grand+Nha+Trang" target="_blank" rel="noreferrer">Google 지도 ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="candidate-panel">
+            <div class="candidate-panel-head"><span>🍴</span><h3>식당</h3></div>
+            <div class="candidate-list">
+              <div class="candidate-card">
+                <div class="candidate-card-top"><h4>Costa Seafood</h4><span class="candidate-price">₫₫₫</span></div>
+                <p>32–34 Trần Phú · 도보 약 2–4분<br>가까운 고급 해산물 · 가격 확인 후 주문</p>
+                <a class="google-link" href="https://www.google.com/maps/search/?api=1&amp;query=Costa+Seafood+Nha+Trang" target="_blank" rel="noreferrer">Google 지도 ↗</a>
+              </div>
+              <div class="candidate-card">
+                <div class="candidate-card-top"><h4>Cơm Gà Trâm Anh</h4><span class="candidate-price">40–75K₫+</span></div>
+                <p>10 Bà Triệu · 차량 약 5–8분<br>가성비 현지식 · 닭고기밥 중심</p>
+                <a class="google-link" href="https://www.google.com/maps/search/?api=1&amp;query=Com+Ga+Tram+Anh+Nha+Trang" target="_blank" rel="noreferrer">Google 지도 ↗</a>
+              </div>
+              <div class="candidate-card">
+                <div class="candidate-card-top"><h4>Lạc Cảnh Beef Restaurant</h4><span class="candidate-price">35–275K₫/메뉴</span></div>
+                <p>Nguyễn Bỉnh Khiêm · 차량 약 7–10분<br>숯불 양념 소고기 · 연기와 더위 고려</p>
+                <a class="google-link" href="https://www.google.com/maps/search/?api=1&amp;query=Lac+Canh+Beef+Restaurant+Nha+Trang" target="_blank" rel="noreferrer">Google 지도 ↗</a>
+              </div>
+              <div class="candidate-card">
+                <div class="candidate-card-top"><h4>Làng Ngon</h4><span class="candidate-price">₫₫</span></div>
+                <p>83 Nguyễn Thị Minh Khai · 차량 약 8–12분<br>다양한 베트남 요리 · 여러 명 식사에 적합</p>
+                <a class="google-link" href="https://www.google.com/maps/search/?api=1&amp;query=Lang+Ngon+Vietnamese+Cuisine+Nha+Trang" target="_blank" rel="noreferrer">Google 지도 ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="candidate-panel">
+            <div class="candidate-panel-head"><span>☕</span><h3>카페</h3></div>
+            <div class="candidate-list">
+              <div class="candidate-card">
+                <div class="candidate-card-top"><h4>Starbucks Nha Trang Center</h4><span class="candidate-price">₫₫</span></div>
+                <p>20 Trần Phú · 도보 약 8–12분<br>바다 전망·콘센트 · 익숙한 메뉴</p>
+                <a class="google-link" href="https://www.google.com/maps/search/?api=1&amp;query=Starbucks+Nha+Trang+Center" target="_blank" rel="noreferrer">Google 지도 ↗</a>
+              </div>
+              <div class="candidate-card">
+                <div class="candidate-card-top"><h4>Xưởng 1925 Coffee Shop</h4><span class="candidate-price">30–100K₫</span></div>
+                <p>23B Biệt Thự · 차량 약 5–8분<br>스페셜티·에그커피 · 06:30–21:00 안내</p>
+                <a class="google-link" href="https://www.google.com/maps/search/?api=1&amp;query=Xuong+1925+Coffee+Shop+23B+Biet+Thu+Nha+Trang" target="_blank" rel="noreferrer">Google 지도 ↗</a>
+              </div>
+              <div class="candidate-card">
+                <div class="candidate-card-top"><h4>Rainforest</h4><span class="candidate-price">₫₫</span></div>
+                <p>146 Võ Trứ · 차량 약 7–10분<br>독특한 실내 공간 · 음료와 브런치</p>
+                <a class="google-link" href="https://www.google.com/maps/search/?api=1&amp;query=Rainforest+146+Vo+Tru+Nha+Trang" target="_blank" rel="noreferrer">Google 지도 ↗</a>
+              </div>
+              <div class="candidate-card">
+                <div class="candidate-card-top"><h4>Alpaca Homestyle Cafe</h4><span class="candidate-price">₫₫</span></div>
+                <p>10/1B Nguyễn Thiện Thuật · 차량 약 5–8분<br>브런치·건강식·채식 옵션 · 21시대 종료</p>
+                <a class="google-link" href="https://www.google.com/maps/search/?api=1&amp;query=Alpaca+Homestyle+Cafe+Nha+Trang" target="_blank" rel="noreferrer">Google 지도 ↗</a>
+              </div>
+            </div>
+          </article>
+        </div>
+        <p class="candidate-footnote">2026년 7월 확인 기준입니다. 가격·운영시간·지점 주소는 바뀔 수 있으므로 방문 당일 Google Maps의 최신 정보와 최근 리뷰를 확인하세요.</p>
+      </section>
+
       <section id="alternatives" class="section">
         <div class="section-head">
           <div><p class="kicker">일정 변경안</p><h2>대체 일정</h2></div>
@@ -819,7 +923,7 @@
 
   <script>
     (() => {
-      const STORAGE_KEY = 'natrang-plan-2026-v4';
+      const STORAGE_KEY = 'natrang-plan-2026-v5';
       const planner = document.getElementById('planner');
       const defaultMarkup = planner.innerHTML;
       const editBtn = document.getElementById('editBtn');
