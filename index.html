@@ -149,6 +149,19 @@
     .nav-strip::-webkit-scrollbar { display: none; }
     .nav-pill { text-decoration: none; white-space: nowrap; border: 1px solid var(--line); background: rgba(255,255,255,.55); padding: 9px 14px; border-radius: 999px; font-size: 13px; font-weight: 700; }
     .nav-pill:hover { background: white; border-color: var(--aqua); }
+    .nav-pill.accent { background: var(--sun); border-color: transparent; color: var(--ocean-deep); }
+
+    .money-section { margin-bottom: 34px; }
+    .money-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; margin-bottom: 14px; }
+    .money-head h2 { font-size: clamp(25px, 3vw, 34px); }
+    .money-head p { margin: 0; color: var(--muted); font-size: 11px; text-align: right; }
+    .money-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+    .money-card { padding: 15px 16px; border-radius: 15px; background: rgba(255,253,248,.9); border: 1px solid var(--line); }
+    .money-card span { display: block; margin-bottom: 6px; color: var(--muted); font-size: 11px; }
+    .money-card strong { display: block; font-size: 15px; }
+    .money-card small { display: block; margin-top: 3px; color: var(--ocean); font-size: 10px; }
+    .money-footer { display: flex; justify-content: space-between; align-items: center; gap: 15px; margin-top: 10px; color: var(--muted); font-size: 10px; }
+    .money-footer a { color: var(--ocean); font-weight: 800; }
 
     .assumption {
       margin-bottom: 26px;
@@ -317,6 +330,10 @@
       .hero-sub { font-size: 12px; }
       .hero-side { grid-template-columns: 1fr 1fr; gap: 8px; }
       .overview-grid, .choice-grid { grid-template-columns: 1fr; }
+      .money-grid { grid-template-columns: 1fr 1fr; }
+      .money-head { align-items: flex-start; flex-direction: column; }
+      .money-head p { text-align: left; }
+      .money-footer { align-items: flex-start; flex-direction: column; }
       .budget-summary { grid-template-columns: 1fr; }
       .postcard { min-height: 96px; padding: 13px; border-radius: 15px; }
       .postcard p { display: none; }
@@ -404,6 +421,7 @@
     <nav class="quick-nav" aria-label="여행계획 바로가기">
       <div class="shell nav-strip">
         <a class="nav-pill" href="#overview">한눈에 보기</a>
+        <a class="nav-pill accent" href="#prices">물가 · 예산</a>
         <a class="nav-pill" href="#day0">7/29 · 도착</a>
         <a class="nav-pill" href="#day1">7/30 · 시내</a>
         <a class="nav-pill" href="#day2">7/31 · 빈원더스</a>
@@ -414,6 +432,25 @@
     </nav>
 
     <div class="shell">
+      <section id="prices" class="section money-section">
+        <div class="money-head">
+          <div><p class="kicker">2026년 7월 기준</p><h2>나트랑 물가 요약</h2></div>
+          <p>환율 기준: 100,000동 ≈ 5,700원<br>숙박·항공권을 제외한 1인 기준 가격입니다.</p>
+        </div>
+        <div class="money-grid">
+          <article class="money-card"><span>현지식 · 커피</span><strong>40–75K₫ · 25–75K₫</strong><small>약 2,300–4,300원 · 1,400–4,300원</small></article>
+          <article class="money-card"><span>중급 식당 1끼</span><strong>175–400K₫</strong><small>약 10,000–23,000원</small></article>
+          <article class="money-card"><span>시내 차량 · 공항 편도</span><strong>40–100K₫ · 300–500K₫</strong><small>약 2,300–5,700원 · 17,000–29,000원</small></article>
+          <article class="money-card"><span>마사지 60분</span><strong>200–500K₫</strong><small>약 11,000–29,000원</small></article>
+          <article class="money-card"><span>빈원더스 성인 표준권</span><strong>1,050K₫</strong><small>약 60,000원</small></article>
+          <article class="money-card"><span>하루 생활비</span><strong>500–800K₫</strong><small>약 29,000–46,000원 · 숙박/관광지 제외</small></article>
+        </div>
+        <div class="money-footer">
+          <span>K = 1,000동. 해변가·호텔·관광객 대상 식당은 범위보다 비쌀 수 있습니다.</span>
+          <a href="#prepare">상세 물가표와 여행 예산 입력 ↓</a>
+        </div>
+      </section>
+
       <section id="overview" class="section">
         <div class="assumption">
           <div class="assumption-icon">!</div>
@@ -782,7 +819,7 @@
 
   <script>
     (() => {
-      const STORAGE_KEY = 'natrang-plan-2026-v3';
+      const STORAGE_KEY = 'natrang-plan-2026-v4';
       const planner = document.getElementById('planner');
       const defaultMarkup = planner.innerHTML;
       const editBtn = document.getElementById('editBtn');
