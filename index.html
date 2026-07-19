@@ -245,20 +245,32 @@
     .choice-card h3 { margin: 12px 0 8px; }
     .choice-card p { margin: 0; color: var(--muted); font-size: 13px; }
 
-    .candidate-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
-    .candidate-panel { padding: 20px; border-radius: var(--radius-lg); background: rgba(255,253,248,.86); border: 1px solid var(--line); }
-    .candidate-panel-head { display: flex; align-items: center; gap: 10px; margin-bottom: 13px; }
-    .candidate-panel-head span { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 10px; background: rgba(105,200,199,.16); }
-    .candidate-panel-head h3 { margin: 0; font-size: 17px; }
-    .candidate-list { display: grid; gap: 8px; }
-    .candidate-card { padding: 12px; border-radius: 12px; background: white; border: 1px solid var(--line); }
+    .candidate-tools { display: grid; grid-template-columns: minmax(190px, 1.4fr) repeat(2, minmax(145px, .7fr)); gap: 10px; margin-bottom: 12px; padding: 14px; border-radius: var(--radius-lg); background: rgba(255,253,248,.86); border: 1px solid var(--line); }
+    .candidate-field { display: grid; gap: 5px; }
+    .candidate-field span { color: var(--muted); font-size: 10px; font-weight: 850; }
+    .candidate-field input, .candidate-field select { width: 100%; min-height: 42px; padding: 0 12px; border: 1px solid var(--line); border-radius: 11px; background: white; color: var(--ink); font: inherit; font-size: 13px; }
+    .candidate-field input:focus, .candidate-field select:focus { outline: 3px solid rgba(105,200,199,.22); border-color: var(--aqua); }
+    .candidate-filter-row { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 14px; }
+    .candidate-tabs { display: flex; flex-wrap: wrap; gap: 7px; }
+    .candidate-tab { min-height: 36px; padding: 0 13px; border: 1px solid var(--line); border-radius: 999px; background: white; color: var(--muted); font-size: 12px; font-weight: 850; cursor: pointer; }
+    .candidate-tab[aria-pressed="true"] { border-color: var(--ocean); background: var(--ocean); color: white; }
+    .candidate-count { color: var(--muted); font-size: 12px; white-space: nowrap; }
+    .candidate-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+    .candidate-card { display: flex; flex-direction: column; min-height: 260px; padding: 17px; border-radius: 15px; background: rgba(255,255,255,.92); border: 1px solid var(--line); box-shadow: 0 9px 28px rgba(18,60,73,.045); }
     .candidate-card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
-    .candidate-card h4 { margin: 0; font-size: 13px; }
-    .candidate-price { flex: 0 0 auto; color: var(--coral); font-size: 10px; font-weight: 900; }
-    .candidate-card p { margin: 5px 0 9px; color: var(--muted); font-size: 11px; }
+    .candidate-card h3 { margin: 0; font-size: 16px; line-height: 1.3; }
+    .candidate-type { flex: 0 0 auto; padding: 4px 7px; border-radius: 999px; background: rgba(105,200,199,.14); color: var(--ocean); font-size: 9px; font-weight: 900; }
+    .candidate-score { margin: 9px 0 0; color: #75571b; font-size: 11px; font-weight: 850; }
+    .candidate-money { display: grid; gap: 3px; margin: 12px 0; padding: 11px 12px; border-radius: 12px; background: rgba(242,166,90,.11); }
+    .candidate-money strong { color: #bd5c42; font-size: 19px; line-height: 1.15; letter-spacing: -.02em; }
+    .candidate-money span { color: var(--ink); font-size: 15px; font-weight: 850; }
+    .candidate-card p { margin: 0 0 13px; color: var(--muted); font-size: 11px; line-height: 1.55; }
+    .candidate-actions { display: flex; justify-content: space-between; align-items: center; gap: 9px; margin-top: auto; }
+    .candidate-distance { color: var(--muted); font-size: 10px; font-weight: 750; }
     .google-link { display: inline-flex; align-items: center; gap: 5px; padding: 6px 9px; border-radius: 999px; background: rgba(13,111,124,.08); color: var(--ocean); font-size: 10px; font-weight: 850; text-decoration: none; }
     .google-link:hover { background: rgba(13,111,124,.15); }
     .candidate-footnote { margin: 12px 0 0; color: var(--muted); font-size: 10px; }
+    .candidate-empty { grid-column: 1 / -1; padding: 42px 20px; border: 1px dashed var(--line); border-radius: 15px; color: var(--muted); text-align: center; }
 
     .two-col { display: grid; grid-template-columns: 1.15fr .85fr; gap: 18px; }
     .prepare-budget { order: 1; }
@@ -328,7 +340,9 @@
       .hero-grid, .two-col { grid-template-columns: 1fr; }
       .hero-side { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
       .overview-grid, .choice-grid { grid-template-columns: 1fr 1fr; }
-      .candidate-grid { grid-template-columns: 1fr; }
+      .candidate-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .candidate-tools { grid-template-columns: 1fr 1fr; }
+      .candidate-tools .candidate-field:first-child { grid-column: 1 / -1; }
       .day-cover { grid-template-columns: 110px 1fr; }
       .pace { grid-column: 1 / -1; width: max-content; }
       .section-head { align-items: flex-start; flex-direction: column; }
@@ -346,6 +360,9 @@
       .hero-sub { font-size: 12px; }
       .hero-side { grid-template-columns: 1fr 1fr; gap: 8px; }
       .overview-grid, .choice-grid { grid-template-columns: 1fr; }
+      .candidate-grid, .candidate-tools { grid-template-columns: 1fr; }
+      .candidate-tools .candidate-field:first-child { grid-column: auto; }
+      .candidate-filter-row { align-items: flex-start; flex-direction: column; }
       .money-grid { grid-template-columns: 1fr 1fr; }
       .money-head { align-items: flex-start; flex-direction: column; }
       .money-head p { text-align: left; }
@@ -705,88 +722,24 @@
       <section id="candidates" class="section">
         <div class="section-head">
           <div><p class="kicker">하바나 호텔 출발 기준</p><h2>마사지 · 식당 · 카페 후보</h2></div>
-          <p class="section-note">지도 버튼을 누르면 스마트폰의 Google Maps로 연결됩니다. 이동시간은 교통 상황에 따라 달라질 수 있습니다.</p>
+          <p class="section-note">총 27곳을 평점·거리·가격으로 비교합니다. 지도 버튼을 누르면 스마트폰의 Google Maps로 연결됩니다.</p>
         </div>
-        <div class="candidate-grid">
-          <article class="candidate-panel">
-            <div class="candidate-panel-head"><span>♨</span><h3>마사지</h3></div>
-            <div class="candidate-list">
-              <div class="candidate-card">
-                <div class="candidate-card-top"><h4>Havana Spa</h4><span class="candidate-price">₫₫₫</span></div>
-                <p>호텔 내부 · 이동 없이 이용 · 늦은 일정에 편리<br>가격과 샤워 가능 여부는 프런트 문의</p>
-                <a class="google-link" href="https://www.google.com/maps/search/?api=1&amp;query=Havana+Spa+Premier+Havana+Nha+Trang" target="_blank" rel="noreferrer">Google 지도 ↗</a>
-              </div>
-              <div class="candidate-card">
-                <div class="candidate-card-top"><h4>Casa Spa</h4><span class="candidate-price">₫₫</span></div>
-                <p>09 Hùng Vương · 도보 약 8–12분<br>10:00–22:00 안내 · 야시장 일정과 조합</p>
-                <a class="google-link" href="https://www.google.com/maps/search/?api=1&amp;query=Casa+Spa+09+Hung+Vuong+Nha+Trang" target="_blank" rel="noreferrer">Google 지도 ↗</a>
-              </div>
-              <div class="candidate-card">
-                <div class="candidate-card-top"><h4>Sứ Spa</h4><span class="candidate-price">200–400K₫+</span></div>
-                <p>Nguyễn Thiện Thuật · 차량 약 8–12분<br>베트남 전통 마사지 · 사전 예약 권장</p>
-                <a class="google-link" href="https://www.google.com/maps/search/?api=1&amp;query=Su+Spa+Nha+Trang" target="_blank" rel="noreferrer">Google 지도 ↗</a>
-              </div>
-              <div class="candidate-card">
-                <div class="candidate-card-top"><h4>Charm Spa Grand</h4><span class="candidate-price">₫₫–₫₫₫</span></div>
-                <p>26 Nguyễn Trung Trực · 차량 약 5–10분<br>마사지·스크럽 등 패키지형 선택지</p>
-                <a class="google-link" href="https://www.google.com/maps/search/?api=1&amp;query=Charm+Spa+Grand+Nha+Trang" target="_blank" rel="noreferrer">Google 지도 ↗</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="candidate-panel">
-            <div class="candidate-panel-head"><span>🍴</span><h3>식당</h3></div>
-            <div class="candidate-list">
-              <div class="candidate-card">
-                <div class="candidate-card-top"><h4>Costa Seafood</h4><span class="candidate-price">₫₫₫</span></div>
-                <p>32–34 Trần Phú · 도보 약 2–4분<br>가까운 고급 해산물 · 가격 확인 후 주문</p>
-                <a class="google-link" href="https://www.google.com/maps/search/?api=1&amp;query=Costa+Seafood+Nha+Trang" target="_blank" rel="noreferrer">Google 지도 ↗</a>
-              </div>
-              <div class="candidate-card">
-                <div class="candidate-card-top"><h4>Cơm Gà Trâm Anh</h4><span class="candidate-price">40–75K₫+</span></div>
-                <p>10 Bà Triệu · 차량 약 5–8분<br>가성비 현지식 · 닭고기밥 중심</p>
-                <a class="google-link" href="https://www.google.com/maps/search/?api=1&amp;query=Com+Ga+Tram+Anh+Nha+Trang" target="_blank" rel="noreferrer">Google 지도 ↗</a>
-              </div>
-              <div class="candidate-card">
-                <div class="candidate-card-top"><h4>Lạc Cảnh Beef Restaurant</h4><span class="candidate-price">35–275K₫/메뉴</span></div>
-                <p>Nguyễn Bỉnh Khiêm · 차량 약 7–10분<br>숯불 양념 소고기 · 연기와 더위 고려</p>
-                <a class="google-link" href="https://www.google.com/maps/search/?api=1&amp;query=Lac+Canh+Beef+Restaurant+Nha+Trang" target="_blank" rel="noreferrer">Google 지도 ↗</a>
-              </div>
-              <div class="candidate-card">
-                <div class="candidate-card-top"><h4>Làng Ngon</h4><span class="candidate-price">₫₫</span></div>
-                <p>83 Nguyễn Thị Minh Khai · 차량 약 8–12분<br>다양한 베트남 요리 · 여러 명 식사에 적합</p>
-                <a class="google-link" href="https://www.google.com/maps/search/?api=1&amp;query=Lang+Ngon+Vietnamese+Cuisine+Nha+Trang" target="_blank" rel="noreferrer">Google 지도 ↗</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="candidate-panel">
-            <div class="candidate-panel-head"><span>☕</span><h3>카페</h3></div>
-            <div class="candidate-list">
-              <div class="candidate-card">
-                <div class="candidate-card-top"><h4>Starbucks Nha Trang Center</h4><span class="candidate-price">₫₫</span></div>
-                <p>20 Trần Phú · 도보 약 8–12분<br>바다 전망·콘센트 · 익숙한 메뉴</p>
-                <a class="google-link" href="https://www.google.com/maps/search/?api=1&amp;query=Starbucks+Nha+Trang+Center" target="_blank" rel="noreferrer">Google 지도 ↗</a>
-              </div>
-              <div class="candidate-card">
-                <div class="candidate-card-top"><h4>Xưởng 1925 Coffee Shop</h4><span class="candidate-price">30–100K₫</span></div>
-                <p>23B Biệt Thự · 차량 약 5–8분<br>스페셜티·에그커피 · 06:30–21:00 안내</p>
-                <a class="google-link" href="https://www.google.com/maps/search/?api=1&amp;query=Xuong+1925+Coffee+Shop+23B+Biet+Thu+Nha+Trang" target="_blank" rel="noreferrer">Google 지도 ↗</a>
-              </div>
-              <div class="candidate-card">
-                <div class="candidate-card-top"><h4>Rainforest</h4><span class="candidate-price">₫₫</span></div>
-                <p>146 Võ Trứ · 차량 약 7–10분<br>독특한 실내 공간 · 음료와 브런치</p>
-                <a class="google-link" href="https://www.google.com/maps/search/?api=1&amp;query=Rainforest+146+Vo+Tru+Nha+Trang" target="_blank" rel="noreferrer">Google 지도 ↗</a>
-              </div>
-              <div class="candidate-card">
-                <div class="candidate-card-top"><h4>Alpaca Homestyle Cafe</h4><span class="candidate-price">₫₫</span></div>
-                <p>10/1B Nguyễn Thiện Thuật · 차량 약 5–8분<br>브런치·건강식·채식 옵션 · 21시대 종료</p>
-                <a class="google-link" href="https://www.google.com/maps/search/?api=1&amp;query=Alpaca+Homestyle+Cafe+Nha+Trang" target="_blank" rel="noreferrer">Google 지도 ↗</a>
-              </div>
-            </div>
-          </article>
+        <div class="candidate-tools" aria-label="후보 필터">
+          <label class="candidate-field"><span>이름·메모 검색</span><input id="candidateSearch" type="search" placeholder="예: 해산물, 브런치, 한국어"></label>
+          <label class="candidate-field"><span>정렬</span><select id="candidateSort"><option value="rating">Google 평점 높은순</option><option value="distance">호텔에서 가까운순</option><option value="reviews">후기 많은순</option><option value="price">낮은 가격순</option></select></label>
+          <label class="candidate-field"><span>호텔 기준 거리</span><select id="candidateDistance"><option value="all">전체 거리</option><option value="1">1 km 이내</option><option value="2">2 km 이내</option><option value="3">3 km 이내</option><option value="5">5 km 이내</option></select></label>
         </div>
-        <p class="candidate-footnote">2026년 7월 확인 기준입니다. 가격·운영시간·지점 주소는 바뀔 수 있으므로 방문 당일 Google Maps의 최신 정보와 최근 리뷰를 확인하세요.</p>
+        <div class="candidate-filter-row">
+          <div class="candidate-tabs" role="group" aria-label="종류 선택">
+            <button class="candidate-tab" type="button" data-candidate-category="all" aria-pressed="true">전체 27</button>
+            <button class="candidate-tab" type="button" data-candidate-category="massage" aria-pressed="false">♨ 마사지 9</button>
+            <button class="candidate-tab" type="button" data-candidate-category="restaurant" aria-pressed="false">🍴 식당 9</button>
+            <button class="candidate-tab" type="button" data-candidate-category="cafe" aria-pressed="false">☕ 카페 9</button>
+          </div>
+          <span id="candidateCount" class="candidate-count">27곳 표시</span>
+        </div>
+        <div id="candidateGrid" class="candidate-grid" aria-live="polite"></div>
+        <p class="candidate-footnote">평점·후기 수는 2026년 7월 19일 Google Maps 정보 스냅샷이며 수시로 바뀝니다. 거리·금액은 하바나 호텔 출발 및 1인 기준 추정치입니다(환산 약 1,000₫ ≈ 57원). 방문 전 지도에서 영업 여부, 실제 메뉴 가격, 최근 낮은 평점 리뷰를 확인하세요.</p>
       </section>
 
       <section id="alternatives" class="section">
@@ -923,7 +876,7 @@
 
   <script>
     (() => {
-      const STORAGE_KEY = 'natrang-plan-2026-v5';
+      const STORAGE_KEY = 'natrang-plan-2026-v6';
       const planner = document.getElementById('planner');
       const defaultMarkup = planner.innerHTML;
       const editBtn = document.getElementById('editBtn');
@@ -934,6 +887,91 @@
       const resetDialog = document.getElementById('resetDialog');
       let editing = false;
       let saveTimer;
+      let candidateCategory = 'all';
+
+      const CANDIDATES = [
+        { category: 'massage', name: 'Hương Sen Spa', rating: 5.0, reviews: 725, distance: 1.6, price: 300, vnd: '300–600K₫', krw: '약 17,000–34,000원', detail: '태국식·오일·풋 마사지 · 09:00–22:00 안내 · 영어 응대 후기', query: 'Huong Sen Spa Nha Trang' },
+        { category: 'massage', name: 'Charm Spa Grand', rating: 4.9, reviews: 2727, distance: 1.4, price: 350, vnd: '350–850K₫', krw: '약 20,000–48,000원', detail: '26 Nguyễn Trung Trực · 시설·패키지형 선택지 · 사전 예약 권장', query: 'Charm Spa Grand Nha Trang' },
+        { category: 'massage', name: 'Sen Spa Nha Trang', rating: 4.9, reviews: 4711, distance: 4.2, price: 350, vnd: '350–900K₫', krw: '약 20,000–51,000원', detail: '241 Ngô Đến · 시내에서 다소 멂 · 마사지 종류가 많고 픽업 여부 확인', query: 'Sen Spa Nha Trang 241 Ngo Den' },
+        { category: 'massage', name: 'Casa Spa', rating: 4.8, reviews: 5117, distance: 0.7, price: 300, vnd: '300–650K₫', krw: '약 17,000–37,000원', detail: '09 Hùng Vương · 도보권 · 10:00–22:00 · 영수증의 팁 포함 여부 확인', query: 'Casa Spa 09 Hung Vuong Nha Trang' },
+        { category: 'massage', name: 'Mandarin Spa & Massage', rating: 4.8, reviews: 1034, distance: 1.2, price: 300, vnd: '300–700K₫', krw: '약 17,000–40,000원', detail: '샤워·사우나·짐 보관 관련 후기 · 마지막 날 이용 전 시설 재확인', query: 'Mandarin Spa and Massage Nha Trang' },
+        { category: 'massage', name: 'Nagon Beauty & Spa', rating: 4.8, reviews: 690, distance: 3.1, price: 250, vnd: '250–550K₫', krw: '약 14,000–31,000원', detail: '타이·스웨디시·지압·풋 마사지 · 시내 북쪽 이동시간 고려', query: 'Nagon Beauty Spa Nha Trang' },
+        { category: 'massage', name: 'Sứ Spa', rating: 4.8, reviews: 0, distance: 1.5, price: 200, vnd: '200–400K₫', krw: '약 11,000–23,000원', detail: 'Nguyễn Thiện Thuật 일대 · 베트남식 마사지 · 정확한 지점·후기 수 확인', query: 'Su Spa Nha Trang' },
+        { category: 'massage', name: 'Miu Miu Spa & Beauty', rating: 4.7, reviews: 1251, distance: 1.1, price: 250, vnd: '250–550K₫', krw: '약 14,000–31,000원', detail: '한국어 응대 관련 후기 · 가족 단위 후기 다수 · 예약 후 지점 확인', query: 'Miu Miu Spa Beauty Nha Trang' },
+        { category: 'massage', name: 'Làng Sen Spa', rating: 4.7, reviews: 344, distance: 2.4, price: 280, vnd: '280–500K₫', krw: '약 16,000–28,000원', detail: '핫스톤·지압·허브 관리 · 비교적 합리적 가격대 후기', query: 'Lang Sen Spa Nha Trang' },
+
+        { category: 'restaurant', name: 'Mắm Restaurant', rating: 4.8, reviews: 2635, distance: 1.4, price: 150, vnd: '150–350K₫', krw: '약 8,500–20,000원', detail: '72 Nguyễn Thiện Thuật · 베트남 가정식 · 11:00–22:00 안내', query: 'Mam Restaurant 72 Nguyen Thien Thuat Nha Trang' },
+        { category: 'restaurant', name: 'Zallo Viễn Triều BBQ', rating: 4.7, reviews: 1611, distance: 4.8, price: 250, vnd: '250–300K₫', krw: '약 14,000–17,000원', detail: '17 Cao Văn Bé · 해산물·고기 숯불 뷔페 · 16:00–22:00 안내', query: 'Zallo Vien Trieu BBQ Buffet Nha Trang' },
+        { category: 'restaurant', name: 'Skylight & Lá Kitchen', rating: 4.6, reviews: 7019, distance: 0.0, price: 300, vnd: '300–900K₫', krw: '약 17,000–51,000원', detail: '하바나 호텔 옥상 · 전망·칵테일 중심 · 입장료·세금·주방 마감 확인', query: 'Skylight La Kitchen Nha Trang' },
+        { category: 'restaurant', name: 'LIVIN Barbecue & Steakhouse', rating: 4.6, reviews: 3271, distance: 1.2, price: 200, vnd: '200–500K₫', krw: '약 11,000–28,000원', detail: '바비큐·스테이크·수제맥주 · 저녁은 예약 권장', query: 'LIVIN Barbecue Steakhouse Nha Trang' },
+        { category: 'restaurant', name: 'Ơi Nha Trang', rating: 4.6, reviews: 1906, distance: 0.8, price: 120, vnd: '120–300K₫', krw: '약 6,800–17,000원', detail: '11 Yersin · 중부 베트남 요리 · 넓은 야외석·라이브 음악 관련 후기', query: 'Oi Nha Trang Restaurant 11 Yersin' },
+        { category: 'restaurant', name: 'Làng Ngon', rating: 4.5, reviews: 3267, distance: 2.1, price: 150, vnd: '150–350K₫', krw: '약 8,500–20,000원', detail: '83 Nguyễn Thị Minh Khai · 베트남 요리 선택 폭이 넓어 여럿이 가기 편함', query: 'Lang Ngon Vietnamese Cuisine Nha Trang' },
+        { category: 'restaurant', name: 'Costa Seafood', rating: 4.1, reviews: 1280, distance: 0.2, price: 500, vnd: '500–1,500K₫', krw: '약 28,000–85,000원', detail: '32C Trần Phú · 가까운 고급 해산물 · 시가·중량·조리비를 주문 전 확인', query: 'Costa Seafood 32C Tran Phu Nha Trang' },
+        { category: 'restaurant', name: 'Lạc Cảnh Beef Restaurant', rating: 3.7, reviews: 4043, distance: 2.0, price: 100, vnd: '100–300K₫', krw: '약 5,700–17,000원', detail: 'Nguyễn Bỉnh Khiêm · 숯불 양념 소고기 · 연기·대기·더위 고려', query: 'Lac Canh Beef Restaurant Nha Trang' },
+        { category: 'restaurant', name: 'Cơm Gà Trâm Anh', rating: 3.7, reviews: 2008, distance: 1.5, price: 40, vnd: '40–75K₫', krw: '약 2,300–4,300원', detail: '10 Bà Triệu · 닭고기밥 중심 가성비 현지식 · 인기 메뉴 품절 전 점심 일찍', query: 'Com Ga Tram Anh 10 Ba Trieu Nha Trang' },
+
+        { category: 'cafe', name: 'Anh Coffee Roasters', rating: 4.9, reviews: 658, distance: 1.3, price: 35, vnd: '35–100K₫', krw: '약 2,000–5,700원', detail: '140 Hoàng Hoa Thám · 직접 로스팅·스페셜티 · 월요일 휴무 안내', query: 'Anh Coffee Roasters 140 Hoang Hoa Tham Nha Trang' },
+        { category: 'cafe', name: 'Xưởng 1925 Coffee Shop', rating: 4.9, reviews: 207, distance: 1.4, price: 30, vnd: '30–100K₫', krw: '약 1,700–5,700원', detail: '23B Biệt Thự · 에그커피·스페셜티 · 06:30–21:00 안내', query: 'Xuong 1925 Coffee Shop 23B Biet Thu Nha Trang' },
+        { category: 'cafe', name: 'Ylak Corner', rating: 4.9, reviews: 109, distance: 2.6, price: 30, vnd: '30–80K₫', krw: '약 1,700–4,500원', detail: '127 Huỳnh Thúc Kháng · 에그·코코넛·솔티드 커피 · 07:00–23:00 안내', query: 'Ylak Corner Egg Coffee Nha Trang' },
+        { category: 'cafe', name: 'Alpaca Homestyle Cafe', rating: 4.8, reviews: 6362, distance: 0.9, price: 60, vnd: '60–220K₫', krw: '약 3,400–12,500원', detail: '10/1B Nguyễn Thiện Thuật · 커피·브런치·채식 옵션 · 식사 겸 이용', query: 'Alpaca Homestyle Cafe Nha Trang' },
+        { category: 'cafe', name: 'Cafe Culture Brunch Club', rating: 4.8, reviews: 1607, distance: 2.0, price: 60, vnd: '60–220K₫', krw: '약 3,400–12,500원', detail: '120/25 Nguyễn Thiện Thuật · 아침·브런치 양이 큰 편 · 월요일 휴무 안내', query: 'Cafe Culture Brunch Club Nha Trang' },
+        { category: 'cafe', name: 'ANDAO Coffee & Chocolate', rating: 4.8, reviews: 392, distance: 4.1, price: 35, vnd: '35–100K₫', krw: '약 2,000–5,700원', detail: 'KĐT Lê Hồng Phong · 스페셜티·사워도우 · 오전 위주 영업 여부 확인', query: 'ANDAO Coffee Chocolate Nha Trang' },
+        { category: 'cafe', name: 'Là Việt Coffee Vinpearl Harbour', rating: 4.8, reviews: 627, distance: 5.8, price: 45, vnd: '45–120K₫', krw: '약 2,600–6,800원', detail: 'Vinpearl Harbour · 빈원더스 일정과 묶기 · 이동·입장 동선 확인', query: 'La Viet Coffee Vinpearl Harbour Nha Trang' },
+        { category: 'cafe', name: 'Gon Coffee & Tea', rating: 4.7, reviews: 33, distance: 1.8, price: 25, vnd: '25–70K₫', krw: '약 1,400–4,000원', detail: '에그커피·차·요거트 · 후기 수가 적어 최근 리뷰를 추가 확인', query: 'Gon Coffee Tea Nha Trang' },
+        { category: 'cafe', name: 'Starbucks Nha Trang Center', rating: 4.1, reviews: 1042, distance: 0.8, price: 100, vnd: '100–200K₫', krw: '약 5,700–11,000원', detail: '20 Trần Phú · 도보권·익숙한 메뉴 · 최근 Wi-Fi·좌석 리뷰 확인', query: 'Starbucks Nha Trang Center 20 Tran Phu' }
+      ];
+
+      const CATEGORY_LABELS = { massage: '마사지', restaurant: '식당', cafe: '카페' };
+
+      function formatReviews(value) {
+        return value ? `후기 ${value.toLocaleString('ko-KR')}개` : '후기 수 지도 확인';
+      }
+
+      function renderCandidates() {
+        const grid = document.getElementById('candidateGrid');
+        if (!grid) return;
+        const search = (document.getElementById('candidateSearch')?.value || '').trim().toLocaleLowerCase('ko-KR');
+        const sort = document.getElementById('candidateSort')?.value || 'rating';
+        const distanceValue = document.getElementById('candidateDistance')?.value || 'all';
+        const maxDistance = distanceValue === 'all' ? Infinity : Number(distanceValue);
+
+        const filtered = CANDIDATES.filter(place => {
+          const matchesCategory = candidateCategory === 'all' || place.category === candidateCategory;
+          const haystack = `${place.name} ${place.detail} ${CATEGORY_LABELS[place.category]}`.toLocaleLowerCase('ko-KR');
+          return matchesCategory && place.distance <= maxDistance && (!search || haystack.includes(search));
+        }).sort((a, b) => {
+          if (sort === 'distance') return a.distance - b.distance || b.rating - a.rating;
+          if (sort === 'reviews') return b.reviews - a.reviews || b.rating - a.rating;
+          if (sort === 'price') return a.price - b.price || b.rating - a.rating;
+          return b.rating - a.rating || b.reviews - a.reviews;
+        });
+
+        grid.innerHTML = filtered.length ? filtered.map(place => {
+          const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(place.query)}`;
+          const distanceText = place.distance === 0 ? '호텔 건물 내' : `호텔에서 약 ${place.distance.toFixed(1)} km`;
+          return `<article class="candidate-card">
+            <div class="candidate-card-top"><h3>${place.name}</h3><span class="candidate-type">${CATEGORY_LABELS[place.category]}</span></div>
+            <div class="candidate-score">★ Google ${place.rating.toFixed(1)} · ${formatReviews(place.reviews)}</div>
+            <div class="candidate-money"><strong>${place.vnd}</strong><span>${place.krw}</span></div>
+            <p>${place.detail}</p>
+            <div class="candidate-actions"><span class="candidate-distance">◎ ${distanceText}</span><a class="google-link" href="${mapUrl}" target="_blank" rel="noreferrer">Google 지도 ↗</a></div>
+          </article>`;
+        }).join('') : '<div class="candidate-empty">조건에 맞는 후보가 없습니다. 거리나 검색어를 바꿔보세요.</div>';
+
+        const count = document.getElementById('candidateCount');
+        if (count) count.textContent = `${filtered.length}곳 표시`;
+      }
+
+      function bindCandidateFilters() {
+        document.getElementById('candidateSearch')?.addEventListener('input', renderCandidates);
+        document.getElementById('candidateSort')?.addEventListener('change', renderCandidates);
+        document.getElementById('candidateDistance')?.addEventListener('change', renderCandidates);
+        document.querySelectorAll('[data-candidate-category]').forEach(button => button.addEventListener('click', () => {
+          candidateCategory = button.dataset.candidateCategory;
+          document.querySelectorAll('[data-candidate-category]').forEach(tab => tab.setAttribute('aria-pressed', String(tab === button)));
+          renderCandidates();
+        }));
+      }
 
       function updateCountdown() {
         const trip = new Date('2026-07-29T00:00:00+09:00');
@@ -1030,6 +1068,9 @@
         resetDialog.close();
         setEditing(false);
         updateCountdown();
+        candidateCategory = 'all';
+        renderCandidates();
+        bindCandidateFilters();
       });
 
       document.addEventListener('click', event => {
@@ -1082,6 +1123,8 @@
       });
 
       load();
+      renderCandidates();
+      bindCandidateFilters();
     })();
   </script>
 </body>
