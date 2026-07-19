@@ -165,7 +165,7 @@
     .assumption strong { display: block; margin-bottom: 3px; color: #9d432e; }
     .assumption p { margin: 0; font-size: 14px; color: #6f4b42; }
 
-    .overview-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 62px; }
+    .overview-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-bottom: 62px; }
     .info-card { min-height: 170px; padding: 22px; border-radius: var(--radius-lg); background: rgba(255,253,248,.84); border: 1px solid rgba(23,53,61,.1); box-shadow: 0 10px 30px rgba(18,60,73,.055); }
     .info-icon { width: 40px; height: 40px; display: grid; place-items: center; border-radius: 12px; background: rgba(105,200,199,.18); font-size: 20px; }
     .info-card h3 { margin: 15px 0 4px; font-size: 15px; }
@@ -247,6 +247,11 @@
     .budget td { padding: 11px 8px; border-top: 1px solid var(--line); }
     .budget td:nth-child(2), .budget th:nth-child(2) { text-align: right; }
     .budget td:last-child { color: var(--muted); }
+    .budget-summary { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 0 0 18px; }
+    .budget-stat { padding: 12px; border-radius: 12px; background: var(--paper); border: 1px solid var(--line); }
+    .budget-stat small { display: block; margin-bottom: 5px; color: var(--muted); font-size: 10px; }
+    .budget-stat strong { display: block; font-size: 13px; }
+    .budget-total td { font-weight: 850; background: rgba(105,200,199,.09); }
 
     .note-paper { min-height: 155px; margin-top: 18px; padding: 22px; border-radius: var(--radius-lg); background: #fff4cb; border: 1px solid rgba(242,166,90,.35); box-shadow: 0 12px 35px rgba(18,60,73,.05); }
     .note-paper h3 { margin: 0 0 10px; font-family: Georgia, serif; }
@@ -296,6 +301,7 @@
       .hero { padding-top: 22px; }
       .hero-main { min-height: 470px; }
       .hero-side, .overview-grid, .choice-grid { grid-template-columns: 1fr; }
+      .budget-summary { grid-template-columns: 1fr; }
       .postcard { min-height: 145px; }
       .day-cover { grid-template-columns: 1fr; gap: 15px; padding: 23px 20px; }
       .pace { grid-column: auto; }
@@ -316,7 +322,7 @@
       .hero-grid { display: block; }
       .hero-main { min-height: 88mm; box-shadow: none; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
       .hero-side { display: none; }
-      .overview-grid { grid-template-columns: repeat(3,1fr); margin-bottom: 8mm; }
+      .overview-grid { grid-template-columns: repeat(4,1fr); margin-bottom: 8mm; }
       .info-card { min-height: 0; box-shadow: none; padding: 12px; }
       .section { break-before: page; margin-bottom: 0; }
       .day-card { box-shadow: none; }
@@ -352,9 +358,9 @@
     <section class="hero">
       <div class="shell hero-grid">
         <div class="hero-main">
-          <p class="eyebrow" contenteditable="true">3 NIGHTS · COASTAL ESCAPE</p>
-          <h1 contenteditable="true">바다의 리듬으로,<br>나트랑</h1>
-          <p class="hero-sub" contenteditable="true">늦은 밤 도착해 천천히 시작하고, 도시와 섬을 하루씩. 마지막 날까지 서두르지 않는 3박 4일.</p>
+          <p class="eyebrow" contenteditable="true">3박 4일 여행 계획</p>
+          <h1 contenteditable="true">나트랑<br>여행 일정표</h1>
+          <p class="hero-sub" contenteditable="true">항공·숙소·일자별 일정·준비물·예산을 한 화면에서 확인하고 수정할 수 있습니다.</p>
           <div class="hero-chips">
             <span class="chip" contenteditable="true">2026. 07. 29 — 08. 01</span>
             <span class="chip" contenteditable="true">Premier Havana</span>
@@ -363,12 +369,12 @@
         </div>
         <div class="hero-side">
           <article class="postcard accent">
-            <span class="post-label">Departure countdown</span>
+            <span class="post-label">출발까지</span>
             <strong class="countdown" id="countdown">D-10</strong>
             <p>출발일은 2026년 7월 29일입니다.</p>
           </article>
           <article class="postcard">
-            <span class="post-label">Home base</span>
+            <span class="post-label">숙소</span>
             <strong class="countdown" style="font-size:36px" contenteditable="true">Havana</strong>
             <p contenteditable="true">38 Trần Phú · 해변 건너편<br>시내 일정의 중심으로 좋은 위치</p>
           </article>
@@ -417,19 +423,25 @@
             <p contenteditable="true">출발 3일 전 시간대별 예보 확인<br>우산·방수팩·자외선 차단제 준비</p>
             <a class="map-link" href="https://www.google.com/search?q=Nha+Trang+weather+July+29+2026" target="_blank" rel="noreferrer">날씨 확인 ↗</a>
           </article>
+          <article class="info-card">
+            <div class="info-icon">◎</div>
+            <h3 contenteditable="true">여행 테마 · 휴양 + 관광 + 액티비티</h3>
+            <p contenteditable="true">휴양 40% · 관광 30% · 액티비티 30%<br>하루에 한 권역 중심으로 이동</p>
+            <span class="map-link" contenteditable="true">일정 강도 · 보통</span>
+          </article>
         </div>
       </section>
 
       <section id="day0" class="section">
         <div class="section-head">
-          <div><p class="kicker">Arrival night</p><h2>도착은 가볍게</h2></div>
-          <p class="section-note">이날의 목표는 단 하나, 안전하게 체크인하기. 식사는 기내에서 해결하거나 간단한 간식을 준비해두세요.</p>
+          <div><p class="kicker">7월 29일 · 도착일</p><h2>입국 및 호텔 이동</h2></div>
+          <p class="section-note">22:30 착륙 기준입니다. 입국심사·수하물 수령·차량 이동을 포함해 00:40 전후 호텔 도착으로 계획했습니다.</p>
         </div>
         <article class="day-card">
           <header class="day-cover">
             <div class="day-date" contenteditable="true">07.29<small>Wednesday</small></div>
             <div class="day-theme"><h3 contenteditable="true">공항 → 하바나 호텔</h3><p contenteditable="true">입국 · 환전은 최소한 · 늦은 체크인</p></div>
-            <div class="pace" contenteditable="true">느긋 10%</div>
+            <div class="pace" contenteditable="true">일정 강도 · 낮음</div>
           </header>
           <div class="schedule-list" id="day0-list">
             <div class="schedule-item">
@@ -444,7 +456,7 @@
             </div>
             <div class="schedule-item">
               <div class="time" contenteditable="true">00:40</div><button class="check" type="button" aria-label="완료 표시"></button>
-              <div class="schedule-main"><p class="schedule-title" contenteditable="true">호텔 체크인 · 취침</p><p class="schedule-desc" contenteditable="true">예약 바우처와 여권 준비. 다음 날 알람은 느긋하게, 생수만 챙기고 바로 휴식.</p><span class="schedule-tag" contenteditable="true">7/30 목요일</span></div>
+              <div class="schedule-main"><p class="schedule-title" contenteditable="true">호텔 체크인 · 취침</p><p class="schedule-desc" contenteditable="true">예약 바우처와 여권 준비. 객실 확인 후 다음 날 일정과 알람 설정.</p><span class="schedule-tag" contenteditable="true">7/30 목요일</span></div>
               <div class="item-actions"><button class="mini-btn move-up" title="위로">↑</button><button class="mini-btn move-down" title="아래로">↓</button><button class="mini-btn delete-item" title="삭제">×</button></div>
             </div>
           </div>
@@ -455,19 +467,19 @@
 
       <section id="day1" class="section">
         <div class="section-head">
-          <div><p class="kicker">Slow city day</p><h2>바다와 올드타운</h2></div>
-          <p class="section-note">늦게 도착한 다음 날이라 오전은 호텔과 해변에서 회복하고, 오후에 북쪽 명소를 한 방향으로 묶었습니다.</p>
+          <div><p class="kicker">7월 30일 · 시내</p><h2>해변 및 시내 관광</h2></div>
+          <p class="section-note">오전은 호텔과 해변, 오후는 포나가르와 혼총을 북쪽 한 방향으로 이동하고 야시장으로 마무리합니다.</p>
         </div>
         <article class="day-card">
           <header class="day-cover" style="background:#0d6f7c">
             <div class="day-date" contenteditable="true">07.30<small>Thursday</small></div>
             <div class="day-theme"><h3 contenteditable="true">해변 → 포나가르 → 혼총</h3><p contenteditable="true">도보와 짧은 차량 이동 · 야시장 마무리</p></div>
-            <div class="pace" contenteditable="true">느긋 55%</div>
+            <div class="pace" contenteditable="true">일정 강도 · 보통</div>
           </header>
           <div class="schedule-list" id="day1-list">
             <div class="schedule-item">
               <div class="time" contenteditable="true">09:00</div><button class="check" type="button" aria-label="완료 표시"></button>
-              <div class="schedule-main"><p class="schedule-title" contenteditable="true">늦은 아침 · 호텔 컨디션 회복</p><p class="schedule-desc" contenteditable="true">조식 포함 여부를 확인하고 천천히 시작. 객실에서 필요한 예약과 날씨를 점검.</p><span class="schedule-tag" contenteditable="true">호텔</span></div>
+              <div class="schedule-main"><p class="schedule-title" contenteditable="true">아침 식사 · 당일 일정 확인</p><p class="schedule-desc" contenteditable="true">조식 포함 여부, 날씨, 관광지 운영시간과 차량 호출 가능 여부 확인.</p><span class="schedule-tag" contenteditable="true">호텔</span></div>
               <div class="item-actions"><button class="mini-btn move-up" title="위로">↑</button><button class="mini-btn move-down" title="아래로">↓</button><button class="mini-btn delete-item" title="삭제">×</button></div>
             </div>
             <div class="schedule-item">
@@ -508,14 +520,14 @@
 
       <section id="day2" class="section">
         <div class="section-head">
-          <div><p class="kicker">Island play day</p><h2>섬에서 온종일</h2></div>
+          <div><p class="kicker">7월 31일 · 액티비티</p><h2>빈원더스 종일 일정</h2></div>
           <p class="section-note">2026년 공식 운영 안내는 08:30–20:00입니다. 워터파크와 공연은 별도 시간이 있으니 전날 공식 앱/사이트에서 다시 확인하세요.</p>
         </div>
         <article class="day-card">
           <header class="day-cover" style="background:#df754f">
             <div class="day-date" contenteditable="true">07.31<small>Friday</small></div>
             <div class="day-theme"><h3 contenteditable="true">빈원더스 나트랑</h3><p contenteditable="true">케이블카 · 놀이기구 · 워터파크 · 야간 쇼</p></div>
-            <div class="pace" contenteditable="true">활동 90%</div>
+            <div class="pace" contenteditable="true">일정 강도 · 높음</div>
           </header>
           <div class="schedule-list" id="day2-list">
             <div class="schedule-item">
@@ -550,7 +562,7 @@
             </div>
             <div class="schedule-item">
               <div class="time" contenteditable="true">19:30</div><button class="check" type="button" aria-label="완료 표시"></button>
-              <div class="schedule-main"><p class="schedule-title" contenteditable="true">Tata Show → 호텔 귀환</p><p class="schedule-desc" contenteditable="true">현재 공식 안내는 19:30 공연. 종료 후 인파를 고려해 천천히 이동하고 호텔 도착 후 야식 또는 휴식.</p><span class="schedule-tag" contenteditable="true">당일 시간 재확인</span></div>
+              <div class="schedule-main"><p class="schedule-title" contenteditable="true">Tata Show → 호텔 귀환</p><p class="schedule-desc" contenteditable="true">현재 공식 안내는 19:30 공연. 종료 후 귀환 케이블카와 차량 대기 시간을 고려해 이동.</p><span class="schedule-tag" contenteditable="true">당일 시간 재확인</span></div>
               <div class="item-actions"><button class="mini-btn move-up" title="위로">↑</button><button class="mini-btn move-down" title="아래로">↓</button><button class="mini-btn delete-item" title="삭제">×</button></div>
             </div>
           </div>
@@ -561,19 +573,19 @@
 
       <section id="day3" class="section">
         <div class="section-head">
-          <div><p class="kicker">Last slow hours</p><h2>마지막까지 천천히</h2></div>
+          <div><p class="kicker">8월 1일 · 출국일</p><h2>체크아웃 및 공항 이동</h2></div>
           <p class="section-note">자정 국제선 출발을 기준으로 공항 체크인 카운터 오픈 3시간 전인 21시경 도착하도록 여유를 두었습니다.</p>
         </div>
         <article class="day-card">
           <header class="day-cover" style="background:#667f65">
             <div class="day-date" contenteditable="true">08.01<small>Saturday</small></div>
             <div class="day-theme"><h3 contenteditable="true">체크아웃 → 휴식 → 공항</h3><p contenteditable="true">짐 보관 · 쇼핑 · 마사지 · 출국</p></div>
-            <div class="pace" contenteditable="true">여유 45%</div>
+            <div class="pace" contenteditable="true">일정 강도 · 낮음</div>
           </header>
           <div class="schedule-list" id="day3-list">
             <div class="schedule-item">
               <div class="time" contenteditable="true">07:30</div><button class="check" type="button" aria-label="완료 표시"></button>
-              <div class="schedule-main"><p class="schedule-title" contenteditable="true">아침 해변 산책</p><p class="schedule-desc" contenteditable="true">햇빛이 강해지기 전 마지막 바다. 전날 피곤하면 과감히 늦잠으로 교체.</p><span class="schedule-tag" contenteditable="true">선택 일정</span></div>
+              <div class="schedule-main"><p class="schedule-title" contenteditable="true">아침 해변 산책 · 선택</p><p class="schedule-desc" contenteditable="true">07:30–08:30 이용. 전날 피로도와 당일 날씨에 따라 생략 가능.</p><span class="schedule-tag" contenteditable="true">선택 일정</span></div>
               <div class="item-actions"><button class="mini-btn move-up" title="위로">↑</button><button class="mini-btn move-down" title="아래로">↓</button><button class="mini-btn delete-item" title="삭제">×</button></div>
             </div>
             <div class="schedule-item">
@@ -619,20 +631,20 @@
 
       <section id="alternatives" class="section">
         <div class="section-head">
-          <div><p class="kicker">Swap the mood</p><h2>취향 따라 바꾸기</h2></div>
-          <p class="section-note">빈원더스가 취향에 맞지 않거나 날씨가 좋지 않을 때 하루 단위로 교체할 수 있는 선택지입니다.</p>
+          <div><p class="kicker">일정 변경안</p><h2>대체 일정</h2></div>
+          <p class="section-note">빈원더스를 이용하지 않거나 기상 상황이 좋지 않을 때 7월 31일 일정을 아래 선택지로 교체할 수 있습니다.</p>
         </div>
         <div class="choice-grid">
           <article class="choice-card"><span class="choice-no">ALT 01</span><h3 contenteditable="true">호핑투어</h3><p contenteditable="true">물놀이와 스노클링이 우선이라면 7/31을 섬 투어로 교체. 픽업·보험·장비·점심·항구세 포함 여부와 최근 해상 상태 확인.</p></article>
-          <article class="choice-card"><span class="choice-no">ALT 02</span><h3 contenteditable="true">완전한 휴양일</h3><p contenteditable="true">호텔 수영장 → 해변 → 스파 → 루프톱. 이동을 최소화하고 체력 회복에 집중하는 구성.</p></article>
+          <article class="choice-card"><span class="choice-no">ALT 02</span><h3 contenteditable="true">호텔 휴식</h3><p contenteditable="true">호텔 수영장 → 해변 → 스파 → 저녁 식사. 장거리 이동 없이 호텔 주변에서 진행.</p></article>
           <article class="choice-card"><span class="choice-no">ALT 03</span><h3 contenteditable="true">비 오는 날</h3><p contenteditable="true">카페 → 마사지 → 쇼핑몰 → 이른 저녁. 낙뢰·강풍이 있으면 섬 이동과 해양 액티비티는 취소 또는 연기.</p></article>
         </div>
       </section>
 
       <section id="prepare" class="section">
         <div class="section-head">
-          <div><p class="kicker">Before you fly</p><h2>준비 & 예산 메모</h2></div>
-          <p class="section-note">체크 버튼과 텍스트는 모두 저장됩니다. 금액은 예약을 확정할 때 직접 입력하세요.</p>
+          <div><p class="kicker">출발 전 관리</p><h2>준비물 · 예약 · 예산</h2></div>
+          <p class="section-note">완료 항목을 체크하고 예약 금액과 현지 지출을 입력하세요. 모든 수정 내용은 브라우저에 저장됩니다.</p>
         </div>
         <div class="two-col">
           <div class="panel">
@@ -650,20 +662,29 @@
           </div>
           <div>
             <div class="panel">
-              <h3>예산 보드</h3>
+              <h3>여행 예산</h3>
+              <div class="budget-summary">
+                <div class="budget-stat"><small>여행 인원</small><strong contenteditable="true">미정</strong></div>
+                <div class="budget-stat"><small>1인 예산</small><strong contenteditable="true">₩ 미정</strong></div>
+                <div class="budget-stat"><small>총예산</small><strong contenteditable="true">₩ 미정</strong></div>
+              </div>
               <table class="budget">
-                <thead><tr><th>항목</th><th>예상 금액</th><th>메모</th></tr></thead>
+                <thead><tr><th>항목</th><th>예상 금액</th><th>상태</th></tr></thead>
                 <tbody>
-                  <tr><td contenteditable="true">공항 픽업 왕복</td><td contenteditable="true" data-placeholder="₩ / ₫">미정</td><td contenteditable="true">예약처</td></tr>
-                  <tr><td contenteditable="true">빈원더스</td><td contenteditable="true" data-placeholder="₩ / ₫">미정</td><td contenteditable="true">인원 × 티켓</td></tr>
-                  <tr><td contenteditable="true">식사·카페</td><td contenteditable="true" data-placeholder="₩ / ₫">미정</td><td contenteditable="true">1일 예산</td></tr>
+                  <tr><td contenteditable="true">항공권</td><td contenteditable="true" data-placeholder="₩ / ₫">미정</td><td contenteditable="true">예약 확인</td></tr>
+                  <tr><td contenteditable="true">하바나 호텔</td><td contenteditable="true" data-placeholder="₩ / ₫">미정</td><td contenteditable="true">예약 완료</td></tr>
+                  <tr><td contenteditable="true">공항 픽업 왕복</td><td contenteditable="true" data-placeholder="₩ / ₫">미정</td><td contenteditable="true">예약 전</td></tr>
+                  <tr><td contenteditable="true">현지 교통</td><td contenteditable="true" data-placeholder="₩ / ₫">미정</td><td contenteditable="true">현지 결제</td></tr>
+                  <tr><td contenteditable="true">빈원더스</td><td contenteditable="true" data-placeholder="₩ / ₫">미정</td><td contenteditable="true">예약 전</td></tr>
+                  <tr><td contenteditable="true">식사·카페</td><td contenteditable="true" data-placeholder="₩ / ₫">미정</td><td contenteditable="true">1일 예산 입력</td></tr>
                   <tr><td contenteditable="true">마사지·쇼핑</td><td contenteditable="true" data-placeholder="₩ / ₫">미정</td><td contenteditable="true">선택 지출</td></tr>
-                  <tr><td contenteditable="true">비상금</td><td contenteditable="true" data-placeholder="₩ / ₫">미정</td><td contenteditable="true">예산의 10%</td></tr>
+                  <tr><td contenteditable="true">비상금</td><td contenteditable="true" data-placeholder="₩ / ₫">미정</td><td contenteditable="true">총예산의 10%</td></tr>
+                  <tr class="budget-total"><td contenteditable="true">합계</td><td contenteditable="true" data-placeholder="₩ / ₫">미정</td><td contenteditable="true">—</td></tr>
                 </tbody>
               </table>
             </div>
             <div class="note-paper">
-              <h3 contenteditable="true">자유 메모</h3>
+              <h3 contenteditable="true">예약 정보 메모</h3>
               <p contenteditable="true" data-placeholder="예약번호, 먹고 싶은 것, 사고 싶은 것 등을 적어보세요.">항공편명 ·
 호텔 예약번호 ·
 꼭 먹고 싶은 음식 ·
@@ -675,7 +696,7 @@
 
       <section class="section">
         <div class="section-head">
-          <div><p class="kicker">Verified links</p><h2>출발 전 공식 확인</h2></div>
+          <div><p class="kicker">공식 정보 링크</p><h2>출발 전 최종 확인</h2></div>
           <p class="section-note">운영시간과 출입국 절차는 바뀔 수 있으므로 아래 공식 페이지를 출발 직전에 다시 확인하세요.</p>
         </div>
         <div class="source-list">
@@ -717,7 +738,7 @@
 
   <script>
     (() => {
-      const STORAGE_KEY = 'natrang-plan-2026-v1';
+      const STORAGE_KEY = 'natrang-plan-2026-v2';
       const planner = document.getElementById('planner');
       const defaultMarkup = planner.innerHTML;
       const editBtn = document.getElementById('editBtn');
