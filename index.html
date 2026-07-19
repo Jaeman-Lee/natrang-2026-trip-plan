@@ -91,13 +91,13 @@
     .tool-btn.primary { background: var(--sun); color: var(--ocean-deep); border-color: transparent; font-weight: 800; }
     .mobile-hide { display: inline; }
 
-    .hero { padding: 58px 0 28px; position: relative; overflow: hidden; }
-    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(280px, .65fr); gap: 28px; align-items: stretch; }
+    .hero { padding: 22px 0 10px; position: relative; overflow: hidden; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(300px, .45fr); gap: 14px; align-items: stretch; }
     .hero-main {
-      min-height: 420px;
+      min-height: 238px;
       position: relative;
       overflow: hidden;
-      padding: clamp(28px, 5vw, 62px);
+      padding: 28px 34px;
       border-radius: var(--radius-xl);
       color: white;
       background:
@@ -112,23 +112,23 @@
     }
     .hero-main::before { bottom: -69px; }
     .hero-main::after { bottom: -93px; background: rgba(105,200,199,.18); transform: rotate(3deg); }
-    .eyebrow { margin: 0 0 15px; text-transform: uppercase; letter-spacing: .18em; font-size: 12px; font-weight: 800; color: #c6ece7; }
+    .eyebrow { margin: 0 0 9px; letter-spacing: .08em; font-size: 11px; font-weight: 800; color: #c6ece7; }
     h1 {
       max-width: 720px;
       margin: 0;
-      font-family: Georgia, "Times New Roman", "Noto Serif KR", serif;
-      font-size: clamp(43px, 8vw, 86px);
-      line-height: .96;
-      letter-spacing: -.055em;
-      font-weight: 600;
+      font-family: Pretendard, "Noto Sans KR", "Apple SD Gothic Neo", system-ui, sans-serif;
+      font-size: clamp(34px, 4.8vw, 56px);
+      line-height: 1.08;
+      letter-spacing: -.045em;
+      font-weight: 850;
     }
-    .hero-sub { max-width: 550px; margin: 25px 0 0; color: rgba(255,255,255,.78); font-size: clamp(15px, 2vw, 18px); }
-    .hero-chips { position: absolute; z-index: 2; left: clamp(28px, 5vw, 62px); bottom: 36px; display: flex; flex-wrap: wrap; gap: 9px; }
-    .chip { border: 1px solid rgba(255,255,255,.2); background: rgba(255,255,255,.11); padding: 8px 12px; border-radius: 999px; font-size: 13px; backdrop-filter: blur(8px); }
+    .hero-sub { max-width: 650px; margin: 10px 0 0; color: rgba(255,255,255,.78); font-size: 14px; }
+    .hero-chips { position: relative; z-index: 2; margin-top: 20px; display: flex; flex-wrap: wrap; gap: 7px; }
+    .chip { border: 1px solid rgba(255,255,255,.2); background: rgba(255,255,255,.11); padding: 6px 10px; border-radius: 999px; font-size: 11px; backdrop-filter: blur(8px); }
 
     .hero-side { display: grid; grid-template-rows: 1fr 1fr; gap: 16px; }
     .postcard {
-      padding: 24px;
+      padding: 17px;
       border: 1px solid rgba(255,255,255,.7);
       border-radius: var(--radius-lg);
       background: rgba(255,253,248,.82);
@@ -140,11 +140,11 @@
     .postcard.accent { background: var(--sun); border-color: rgba(255,255,255,.45); }
     .post-label { text-transform: uppercase; letter-spacing: .15em; color: var(--muted); font-size: 10px; font-weight: 900; }
     .postcard.accent .post-label { color: rgba(23,53,61,.65); }
-    .countdown { font-size: clamp(34px, 5vw, 55px); font-family: Georgia, serif; letter-spacing: -.04em; line-height: 1; margin: 8px 0; }
-    .postcard p { margin: 8px 0 0; color: var(--muted); font-size: 13px; }
+    .countdown { font-size: clamp(28px, 3.5vw, 38px); font-family: Georgia, serif; letter-spacing: -.04em; line-height: 1; margin: 5px 0; }
+    .postcard p { margin: 5px 0 0; color: var(--muted); font-size: 11px; }
     .postcard.accent p { color: rgba(23,53,61,.75); }
 
-    .quick-nav { padding: 16px 0 30px; }
+    .quick-nav { padding: 8px 0 18px; }
     .nav-strip { display: flex; gap: 8px; overflow-x: auto; padding: 4px; scrollbar-width: none; }
     .nav-strip::-webkit-scrollbar { display: none; }
     .nav-pill { text-decoration: none; white-space: nowrap; border: 1px solid var(--line); background: rgba(255,255,255,.55); padding: 9px 14px; border-radius: 999px; font-size: 13px; font-weight: 700; }
@@ -232,7 +232,9 @@
     .choice-card h3 { margin: 12px 0 8px; }
     .choice-card p { margin: 0; color: var(--muted); font-size: 13px; }
 
-    .two-col { display: grid; grid-template-columns: 1.05fr .95fr; gap: 18px; }
+    .two-col { display: grid; grid-template-columns: 1.15fr .85fr; gap: 18px; }
+    .prepare-budget { order: 1; }
+    .prepare-check { order: 2; }
     .panel { padding: 25px; border-radius: var(--radius-lg); background: rgba(255,253,248,.86); border: 1px solid var(--line); }
     .panel h3 { margin: 0 0 17px; }
     .check-list { display: grid; gap: 7px; }
@@ -252,6 +254,17 @@
     .budget-stat small { display: block; margin-bottom: 5px; color: var(--muted); font-size: 10px; }
     .budget-stat strong { display: block; font-size: 13px; }
     .budget-total td { font-weight: 850; background: rgba(105,200,199,.09); }
+    .price-guide { margin: 0 0 20px; padding: 16px; border-radius: 14px; background: rgba(13,111,124,.06); border: 1px solid rgba(13,111,124,.16); }
+    .price-guide-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 11px; }
+    .price-guide-head h4 { margin: 0; font-size: 14px; }
+    .price-guide-head span { color: var(--ocean); font-size: 11px; font-weight: 800; text-align: right; }
+    .price-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 7px; }
+    .price-item { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; padding: 9px 10px; border-radius: 10px; background: rgba(255,255,255,.7); }
+    .price-item span { color: var(--muted); font-size: 11px; }
+    .price-item strong { flex: 0 0 auto; text-align: right; font-size: 11px; }
+    .price-note { margin: 10px 0 0; color: var(--muted); font-size: 10px; }
+    .price-sources { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+    .price-sources a { color: var(--ocean); font-size: 10px; }
 
     .note-paper { min-height: 155px; margin-top: 18px; padding: 22px; border-radius: var(--radius-lg); background: #fff4cb; border: 1px solid rgba(242,166,90,.35); box-shadow: 0 12px 35px rgba(18,60,73,.05); }
     .note-paper h3 { margin: 0 0 10px; font-family: Georgia, serif; }
@@ -298,11 +311,17 @@
       .brand-copy small, .mobile-hide, .tool-btn.secondary { display: none; }
       .tool-btn { width: 38px; padding: 0; }
       .tool-btn.primary { width: auto; padding: 0 12px; }
-      .hero { padding-top: 22px; }
-      .hero-main { min-height: 470px; }
-      .hero-side, .overview-grid, .choice-grid { grid-template-columns: 1fr; }
+      .hero { padding-top: 10px; }
+      .hero-main { min-height: auto; padding: 20px; border-radius: 20px; }
+      .hero-main h1 { font-size: 32px; }
+      .hero-sub { font-size: 12px; }
+      .hero-side { grid-template-columns: 1fr 1fr; gap: 8px; }
+      .overview-grid, .choice-grid { grid-template-columns: 1fr; }
       .budget-summary { grid-template-columns: 1fr; }
-      .postcard { min-height: 145px; }
+      .postcard { min-height: 96px; padding: 13px; border-radius: 15px; }
+      .postcard p { display: none; }
+      .countdown { font-size: 27px !important; }
+      .price-grid { grid-template-columns: 1fr; }
       .day-cover { grid-template-columns: 1fr; gap: 15px; padding: 23px 20px; }
       .pace { grid-column: auto; }
       .schedule-list { padding: 8px 18px 0; }
@@ -320,7 +339,7 @@
       .shell { width: 100%; }
       .hero { padding: 0 0 8mm; }
       .hero-grid { display: block; }
-      .hero-main { min-height: 88mm; box-shadow: none; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+      .hero-main { min-height: 48mm; box-shadow: none; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
       .hero-side { display: none; }
       .overview-grid { grid-template-columns: repeat(4,1fr); margin-bottom: 8mm; }
       .info-card { min-height: 0; box-shadow: none; padding: 12px; }
@@ -359,7 +378,7 @@
       <div class="shell hero-grid">
         <div class="hero-main">
           <p class="eyebrow" contenteditable="true">3박 4일 여행 계획</p>
-          <h1 contenteditable="true">나트랑<br>여행 일정표</h1>
+          <h1 contenteditable="true">나트랑 여행 일정표</h1>
           <p class="hero-sub" contenteditable="true">항공·숙소·일자별 일정·준비물·예산을 한 화면에서 확인하고 수정할 수 있습니다.</p>
           <div class="hero-chips">
             <span class="chip" contenteditable="true">2026. 07. 29 — 08. 01</span>
@@ -647,7 +666,7 @@
           <p class="section-note">완료 항목을 체크하고 예약 금액과 현지 지출을 입력하세요. 모든 수정 내용은 브라우저에 저장됩니다.</p>
         </div>
         <div class="two-col">
-          <div class="panel">
+          <div class="panel prepare-check">
             <h3>출발 전 체크</h3>
             <div class="check-list">
               <div class="check-row"><button class="check" type="button" aria-label="완료 표시"></button><span class="check-text" contenteditable="true">여권 유효기간 6개월 이상 확인</span><span class="check-when" contenteditable="true">지금</span></div>
@@ -660,7 +679,7 @@
               <div class="check-row"><button class="check" type="button" aria-label="완료 표시"></button><span class="check-text" contenteditable="true">선크림 · 모자 · 우산 · 방수팩 · 상비약</span><span class="check-when" contenteditable="true">짐 싸기</span></div>
             </div>
           </div>
-          <div>
+          <div class="prepare-budget">
             <div class="panel">
               <h3>여행 예산</h3>
               <div class="budget-summary">
@@ -668,16 +687,41 @@
                 <div class="budget-stat"><small>1인 예산</small><strong contenteditable="true">₩ 미정</strong></div>
                 <div class="budget-stat"><small>총예산</small><strong contenteditable="true">₩ 미정</strong></div>
               </div>
+              <div class="price-guide">
+                <div class="price-guide-head">
+                  <h4>나트랑 물가 가이드 · 1인 기준</h4>
+                  <span>2026.07 기준<br>100,000₫ ≈ 5,700원</span>
+                </div>
+                <div class="price-grid">
+                  <div class="price-item"><span>현지식 1끼</span><strong>40–75K₫<br>약 2,300–4,300원</strong></div>
+                  <div class="price-item"><span>중급 식당 1끼</span><strong>175–400K₫<br>약 10,000–23,000원</strong></div>
+                  <div class="price-item"><span>커피 1잔</span><strong>25–75K₫<br>약 1,400–4,300원</strong></div>
+                  <div class="price-item"><span>물·현지 맥주</span><strong>8–40K₫<br>약 500–2,300원</strong></div>
+                  <div class="price-item"><span>시내 차량 1회</span><strong>40–100K₫<br>약 2,300–5,700원</strong></div>
+                  <div class="price-item"><span>공항 차량 편도</span><strong>300–500K₫<br>약 17,000–29,000원</strong></div>
+                  <div class="price-item"><span>마사지 60분</span><strong>200–500K₫<br>약 11,000–29,000원</strong></div>
+                  <div class="price-item"><span>빈원더스 성인</span><strong>1,050K₫<br>약 60,000원</strong></div>
+                  <div class="price-item"><span>여행자 SIM</span><strong>100–210K₫<br>약 5,700–12,000원</strong></div>
+                  <div class="price-item"><span>하루 생활비</span><strong>500–800K₫<br>약 29,000–46,000원</strong></div>
+                </div>
+                <p class="price-note">K = 1,000동. 하루 생활비는 숙박·유료 관광지 제외 기준이며, 해변가·호텔·관광객 대상 식당은 더 비쌀 수 있습니다.</p>
+                <div class="price-sources">
+                  <a href="https://vietnamspot.ru/en/blog/nha-trang-prices" target="_blank" rel="noreferrer">2026 물가 자료 ↗</a>
+                  <a href="https://www.numbeo.com/cost-of-living/in/Nha-Trang" target="_blank" rel="noreferrer">나트랑 가격 평균 ↗</a>
+                  <a href="https://www.valutafx.com/history/vnd-krw-2026" target="_blank" rel="noreferrer">동/원 환율 ↗</a>
+                  <a href="https://vinwonders.com/vi/wonderpedia/news/bang-gia-ve-vinwonders-nha-trang-cap-nhat/" target="_blank" rel="noreferrer">빈원더스 공식 요금 ↗</a>
+                </div>
+              </div>
               <table class="budget">
                 <thead><tr><th>항목</th><th>예상 금액</th><th>상태</th></tr></thead>
                 <tbody>
                   <tr><td contenteditable="true">항공권</td><td contenteditable="true" data-placeholder="₩ / ₫">미정</td><td contenteditable="true">예약 확인</td></tr>
                   <tr><td contenteditable="true">하바나 호텔</td><td contenteditable="true" data-placeholder="₩ / ₫">미정</td><td contenteditable="true">예약 완료</td></tr>
-                  <tr><td contenteditable="true">공항 픽업 왕복</td><td contenteditable="true" data-placeholder="₩ / ₫">미정</td><td contenteditable="true">예약 전</td></tr>
-                  <tr><td contenteditable="true">현지 교통</td><td contenteditable="true" data-placeholder="₩ / ₫">미정</td><td contenteditable="true">현지 결제</td></tr>
-                  <tr><td contenteditable="true">빈원더스</td><td contenteditable="true" data-placeholder="₩ / ₫">미정</td><td contenteditable="true">예약 전</td></tr>
-                  <tr><td contenteditable="true">식사·카페</td><td contenteditable="true" data-placeholder="₩ / ₫">미정</td><td contenteditable="true">1일 예산 입력</td></tr>
-                  <tr><td contenteditable="true">마사지·쇼핑</td><td contenteditable="true" data-placeholder="₩ / ₫">미정</td><td contenteditable="true">선택 지출</td></tr>
+                  <tr><td contenteditable="true">공항 픽업 왕복</td><td contenteditable="true" data-placeholder="₩ / ₫">600–1,000K₫ / 팀</td><td contenteditable="true">예약 전</td></tr>
+                  <tr><td contenteditable="true">현지 교통</td><td contenteditable="true" data-placeholder="₩ / ₫">300–600K₫ / 팀</td><td contenteditable="true">예산 가이드</td></tr>
+                  <tr><td contenteditable="true">빈원더스</td><td contenteditable="true" data-placeholder="₩ / ₫">1,050K₫ × 성인</td><td contenteditable="true">예약 전</td></tr>
+                  <tr><td contenteditable="true">식사·카페</td><td contenteditable="true" data-placeholder="₩ / ₫">1,500–2,400K₫ / 인</td><td contenteditable="true">3일 기준</td></tr>
+                  <tr><td contenteditable="true">마사지·쇼핑</td><td contenteditable="true" data-placeholder="₩ / ₫">200–900K₫ / 인 + 쇼핑</td><td contenteditable="true">선택 지출</td></tr>
                   <tr><td contenteditable="true">비상금</td><td contenteditable="true" data-placeholder="₩ / ₫">미정</td><td contenteditable="true">총예산의 10%</td></tr>
                   <tr class="budget-total"><td contenteditable="true">합계</td><td contenteditable="true" data-placeholder="₩ / ₫">미정</td><td contenteditable="true">—</td></tr>
                 </tbody>
@@ -738,7 +782,7 @@
 
   <script>
     (() => {
-      const STORAGE_KEY = 'natrang-plan-2026-v2';
+      const STORAGE_KEY = 'natrang-plan-2026-v3';
       const planner = document.getElementById('planner');
       const defaultMarkup = planner.innerHTML;
       const editBtn = document.getElementById('editBtn');
